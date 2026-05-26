@@ -483,18 +483,21 @@
         <div class="wa-card-text"><strong>Scrivici su WhatsApp</strong><span>Risposta rapida · +39 328 619 1755</span></div>
       </a>
     </div>
-    <form class="cform rv" onsubmit="sendForm(event)">
+    <form class="cform rv" action="https://formspree.io/f/xredyvzj" method="POST">
+      <input type="hidden" name="_subject" value="🏠 Nuova richiesta Everbox Italia"/>
+      <input type="hidden" name="_next" value="https://everboxitaly.vercel.app/#contatti?success=true"/>
+      <input type="hidden" name="_cc" value="yoel@everbox.co.il"/>
       <div class="fr2">
-        <div class="fg"><label>Nome *</label><input type="text" placeholder="Mario" required/></div>
-        <div class="fg"><label>Cognome *</label><input type="text" placeholder="Rossi" required/></div>
+        <div class="fg"><label>Nome *</label><input type="text" name="nome" placeholder="Mario" required/></div>
+        <div class="fg"><label>Cognome *</label><input type="text" name="cognome" placeholder="Rossi" required/></div>
       </div>
       <div class="fr2">
-        <div class="fg"><label>Email *</label><input type="email" id="f-email" placeholder="mario@email.it" required/></div>
-        <div class="fg"><label>Telefono</label><input type="tel" id="f-tel" placeholder="+39 333 000 0000"/></div>
+        <div class="fg"><label>Email *</label><input type="email" name="email" placeholder="mario@email.it" required/></div>
+        <div class="fg"><label>Telefono</label><input type="tel" name="telefono" placeholder="+39 333 000 0000"/></div>
       </div>
       <div class="fg">
         <label>Modello di interesse</label>
-        <select id="f-prod">
+        <select name="modello" id="f-prod">
           <option value="">Seleziona…</option>
           <option>Everbox 2×2 – Bianco (€2.269)</option>
           <option>Everbox 3×2 – Bianco (€2.849)</option>
@@ -511,8 +514,7 @@
           <option>Soluzione personalizzata</option>
         </select>
       </div>
-      <div class="fg"><label>Nome *</label><input type="text" id="f-name" style="display:none"/></div>
-      <div class="fg"><label>Messaggio</label><textarea id="f-msg" placeholder="Raccontaci il tuo progetto — uso previsto, spazio, tempistiche…"></textarea></div>
+      <div class="fg"><label>Messaggio</label><textarea name="messaggio" id="f-msg" placeholder="Raccontaci il tuo progetto — uso previsto, spazio, tempistiche…"></textarea></div>
       <button type="submit" class="btn-send">Invia Richiesta →</button>
     </form>
   </div>
@@ -590,32 +592,18 @@
     if (navOpen && !e.target.closest('nav') && !e.target.closest('#mobileMenu')) closeNav();
   });
 
-  // Form → sends to europe@everbox.co.il via mailto
-  function sendForm(e) {
-    e.preventDefault();
-    const name = document.querySelector('#contatti .fr2 input[type=text]').value;
-    const surname = document.querySelectorAll('#contatti .fr2 input[type=text]')[1].value;
-    const email = document.getElementById('f-email').value;
-    const tel = document.getElementById('f-tel').value;
-    const prod = document.getElementById('f-prod').value;
-    const msg = document.getElementById('f-msg').value;
-
-    const subject = encodeURIComponent('Richiesta Everbox Italia – ' + name + ' ' + surname);
-    const body = encodeURIComponent(
-      'Nome: ' + name + ' ' + surname + '\n' +
-      'Email: ' + email + '\n' +
-      'Telefono: ' + tel + '\n' +
-      'Modello: ' + prod + '\n\n' +
-      'Messaggio:\n' + msg
-    );
-
-    window.location.href = 'mailto:europe@everbox.co.il?subject=' + subject + '&body=' + body;
-
-    const btn = e.target.querySelector('.btn-send');
-    btn.textContent = '✓ Apertura email…';
-    btn.style.background = '#16a34a';
+  // Form feedback (Formspree handles actual sending)
+  document.querySelector('.cform').addEventListener('submit', function(e) {
+    const btn = this.querySelector('.btn-send');
+    btn.textContent = 'Invio in corso…';
     btn.disabled = true;
-    setTimeout(() => { btn.textContent = 'Invia Richiesta →'; btn.style.background = ''; btn.disabled = false; }, 4000);
+    // Formspree will redirect back; show success if page reloads with ?success
+  });
+  if (window.location.search.includes('success')) {
+    const form = document.querySelector('.cform');
+    if (form) {
+      form.innerHTML = '<div style="padding:2rem;background:#f0fdf4;border:1px solid #bbf7d0;border-radius:8px;text-align:center"><div style=\'font-size:2rem;margin-bottom:.5rem\'>✅</div><strong style=\'color:#166534;font-size:1.05rem\'>Richiesta inviata!</strong><p style=\'color:#4b7c5a;margin-top:.5rem;font-size:.9rem\'>Ti risponderemo entro 24 ore.</p></div>';
+    }
   }
 </script>
 </body>
