@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Everbox Italia – Spazi Modulari per il Nord Italia</title>
+  <meta name="description" content="Everbox Italia – casette modulari in alluminio isolate termoacusticamente. Ufficio, deposito, studio, clinica. Spedizione nel Nord Italia."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --black:#0a0b09;
+      --near:#141612;
+      --green:#1a3a1e;
+      --accent:#4ade80;
+      --accent2:#86efac;
+      --white:#f8faf6;
+      --gray1:#f0f2ed;
+      --gray2:#e2e6de;
+      --gray3:#b8c0b2;
+      --gray4:#6b7566;
+      --text:#1a1c18;
+      --muted:#6b7566;
+      --border:rgba(26,28,24,0.09);
+      --r:6px;
+    }
+    html{scroll-behavior:smooth}
+    body{font-family:'Inter',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;font-size:16px;line-height:1.6}
+
+    /* ── NAV ── */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:200;
+      display:flex;align-items:center;justify-content:space-between;
+      padding:0 5vw;height:64px;
+      background:rgba(248,250,246,0.92);backdrop-filter:blur(20px);
+      border-bottom:1px solid var(--border);
+      transition:box-shadow .3s;
+    }
+    nav.up{box-shadow:0 4px 32px rgba(0,0,0,.06)}
+    .logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+    .logo img{height:32px;width:auto}
+    .logo-text{font-family:'Syne',sans-serif;font-weight:700;font-size:1.1rem;color:var(--black);letter-spacing:.04em}
+    .logo-text span{color:var(--accent);filter:brightness(.75)}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{text-decoration:none;font-size:.85rem;font-weight:400;color:var(--muted);transition:color .2s}
+    .nav-links a:hover{color:var(--black)}
+    .nav-cta{
+      background:var(--black)!important;color:var(--white)!important;
+      padding:.48rem 1.2rem!important;border-radius:var(--r)!important;
+      font-weight:500!important;font-size:.82rem!important;
+    }
+    .wa-btn-nav{
+      display:flex;align-items:center;gap:6px;
+      background:#25D366!important;color:#fff!important;
+      padding:.48rem 1.1rem!important;border-radius:var(--r)!important;
+      font-weight:500!important;font-size:.82rem!important;
+    }
+    .burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+    .burger span{width:22px;height:1.5px;background:var(--black);border-radius:2px}
+
+    /* ── HERO ── */
+    #hero{
+      min-height:100vh;padding:80px 0 0;
+      background:var(--black);
+      display:grid;grid-template-columns:1fr 1fr;
+      position:relative;overflow:hidden;
+    }
+    .hero-left{
+      display:flex;flex-direction:column;justify-content:center;
+      padding:0 5vw 80px 7vw;
+      position:relative;z-index:2;
+    }
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      background:rgba(74,222,128,.12);border:1px solid rgba(74,222,128,.25);
+      color:var(--accent);font-size:.72rem;font-weight:500;letter-spacing:.14em;
+      text-transform:uppercase;padding:.4rem 1rem;border-radius:100px;
+      margin-bottom:2rem;width:fit-content;
+    }
+    .hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+    h1{
+      font-family:'Syne',sans-serif;
+      font-size:clamp(3rem,4.5vw,5rem);
+      font-weight:800;line-height:1.0;
+      color:#fff;margin-bottom:1.8rem;
+      letter-spacing:-.02em;
+    }
+    h1 .hl{
+      background:linear-gradient(135deg,var(--accent),#6ee7b7);
+      -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+      background-clip:text;
+    }
+    .hero-desc{
+      font-size:1.05rem;font-weight:300;line-height:1.85;
+      color:rgba(255,255,255,.58);max-width:460px;margin-bottom:3rem;
+    }
+    .hero-btns{display:flex;gap:.8rem;flex-wrap:wrap}
+    .btn-g{
+      display:inline-flex;align-items:center;gap:8px;
+      background:var(--accent);color:var(--black);
+      padding:.85rem 2rem;border-radius:var(--r);
+      font-weight:700;font-size:.9rem;text-decoration:none;
+      transition:background .2s,transform .15s;font-family:'Syne',sans-serif;
+    }
+    .btn-g:hover{background:var(--accent2);transform:translateY(-2px)}
+    .btn-wa{
+      display:inline-flex;align-items:center;gap:8px;
+      background:#25D366;color:#fff;
+      padding:.85rem 1.8rem;border-radius:var(--r);
+      font-weight:500;font-size:.9rem;text-decoration:none;
+      transition:background .2s,transform .15s;
+    }
+    .btn-wa:hover{background:#1ebe5a;transform:translateY(-2px)}
+    .btn-o{
+      display:inline-flex;align-items:center;gap:8px;
+      border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);
+      padding:.85rem 1.8rem;border-radius:var(--r);
+      font-weight:400;font-size:.9rem;text-decoration:none;
+      transition:border-color .2s,background .2s;
+    }
+    .btn-o:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05)}
+    .hero-stats{
+      display:flex;gap:2.5rem;margin-top:4rem;
+      padding-top:2.5rem;border-top:1px solid rgba(255,255,255,.08);
+    }
+    .s-num{
+      font-family:'Syne',sans-serif;font-size:1.9rem;font-weight:800;
+      color:var(--accent);display:block;line-height:1;
+    }
+    .s-label{font-size:.72rem;color:rgba(255,255,255,.35);letter-spacing:.05em;margin-top:.3rem}
+
+    .hero-right{
+      position:relative;overflow:hidden;
+    }
+    .hero-right img{
+      width:100%;height:100%;object-fit:cover;
+      filter:brightness(.8)saturate(1.1);
+    }
+    .hero-right::after{
+      content:'';position:absolute;left:0;top:0;bottom:0;width:120px;
+      background:linear-gradient(to right,var(--black),transparent);
+      pointer-events:none;z-index:1;
+    }
+    .hero-right::before{
+      content:'';position:absolute;right:0;bottom:0;left:0;height:200px;
+      background:linear-gradient(to top,var(--black),transparent);
+      pointer-events:none;z-index:1;
+    }
+
+    /* ── USES ── */
+    #uses{padding:100px 7vw;background:var(--white)}
+    .uses-header{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:end;margin-bottom:4rem}
+    .uses-intro{font-size:1rem;color:var(--muted);font-weight:300;line-height:1.85}
+    .uses-grid{
+      display:grid;grid-template-columns:repeat(4,1fr);
+      gap:1px;background:var(--border);
+      border:1px solid var(--border);border-radius:var(--r);overflow:hidden;
+    }
+    .use-card{
+      background:var(--white);padding:2.2rem 1.8rem;
+      transition:background .2s;cursor:default;
+      position:relative;overflow:hidden;
+    }
+    .use-card:hover{background:var(--gray1)}
+    .use-card:hover .use-icon{transform:scale(1.1);color:var(--accent)}
+    .use-icon{
+      font-size:2rem;margin-bottom:1.2rem;display:block;
+      transition:transform .25s,color .25s;
+    }
+    .use-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;margin-bottom:.5rem;color:var(--black)}
+    .use-desc{font-size:.82rem;color:var(--muted);line-height:1.7}
+
+    /* ── ADVANTAGES ── */
+    #advantages{padding:100px 7vw;background:var(--near);position:relative;overflow:hidden}
+    #advantages::before{
+      content:'';position:absolute;top:-200px;right:-200px;
+      width:600px;height:600px;border-radius:50%;
+      background:radial-gradient(circle,rgba(74,222,128,.06) 0%,transparent 70%);
+      pointer-events:none;
+    }
+    #advantages .section-eyebrow{color:var(--accent)}
+    #advantages h2{color:#fff}
+    #advantages .section-sub{color:rgba(255,255,255,.45)}
+    .adv-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.06);border-radius:var(--r);overflow:hidden;margin-top:3.5rem}
+    .adv-item{
+      padding:2.5rem 2.2rem;background:transparent;
+      border-right:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+      transition:background .25s;
+    }
+    .adv-item:hover{background:rgba(74,222,128,.04)}
+    .adv-tag{
+      display:inline-block;background:rgba(74,222,128,.1);
+      color:var(--accent);font-size:.7rem;font-weight:600;
+      letter-spacing:.12em;text-transform:uppercase;
+      padding:.3rem .8rem;border-radius:100px;margin-bottom:1.2rem;
+    }
+    .adv-title{font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:.7rem}
+    .adv-text{font-size:.87rem;color:rgba(255,255,255,.45);line-height:1.8}
+    .adv-num{font-family:'Syne',sans-serif;font-size:3rem;font-weight:800;color:rgba(74,222,128,.08);line-height:1;margin-bottom:.5rem}
+
+    /* ── PRODUCTS ── */
+    #prodotti{padding:100px 7vw;background:var(--gray1)}
+    .tab-row{display:flex;gap:0;margin:2.5rem 0 3rem;border-bottom:1px solid var(--border)}
+    .tab{
+      padding:.7rem 1.6rem;background:none;border:none;border-bottom:2px solid transparent;
+      font-family:'Inter',sans-serif;font-size:.85rem;font-weight:400;
+      color:var(--muted);cursor:pointer;transition:color .2s,border-color .2s;
+    }
+    .tab:hover{color:var(--black)}
+    .tab.on{color:var(--black);border-bottom-color:var(--accent);font-weight:500;filter:brightness(.75)}
+    .tab.on{color:var(--black);border-bottom-color:#16a34a}
+    .panel{display:none}
+    .panel.on{display:block}
+    .prod-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem}
+    .p-card{
+      background:#fff;border-radius:var(--r);overflow:hidden;
+      border:1px solid var(--border);
+      transition:transform .28s,box-shadow .28s;
+    }
+    .p-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.1)}
+    .p-card img{width:100%;aspect-ratio:4/3;object-fit:contain;background:#f8faf6;padding:12px}
+    .p-body{padding:1.3rem 1.4rem 1.5rem}
+    .p-tag{font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#16a34a;margin-bottom:.4rem}
+    .p-name{font-family:'Syne',sans-serif;font-weight:700;font-size:1.25rem;color:var(--black);margin-bottom:.75rem}
+    .p-specs{list-style:none;margin-bottom:1.1rem}
+    .p-specs li{font-size:.8rem;color:var(--muted);padding:.18rem 0;display:flex;align-items:center;gap:.45rem}
+    .p-specs li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);filter:brightness(.6);flex-shrink:0}
+    .p-foot{display:flex;align-items:center;justify-content:space-between;padding-top:1rem;border-top:1px solid var(--border)}
+    .p-price{font-family:'Syne',sans-serif;font-size:1.45rem;font-weight:700;color:var(--black)}
+    .p-price small{font-family:'Inter',sans-serif;font-size:.72rem;color:var(--muted);font-weight:400}
+    .btn-buy{
+      background:var(--black);color:#fff;
+      padding:.55rem 1.1rem;border-radius:var(--r);
+      font-size:.78rem;font-weight:500;text-decoration:none;
+      transition:background .2s;white-space:nowrap;
+    }
+    .btn-buy:hover{background:var(--green)}
+    .acc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+    .acc-card{background:#fff;border-radius:var(--r);overflow:hidden;border:1px solid var(--border);transition:transform .25s}
+    .acc-card:hover{transform:translateY(-4px)}
+    .acc-card img{width:100%;aspect-ratio:3/2;object-fit:contain;background:#f8faf6;padding:10px}
+    .acc-body{padding:1rem 1.1rem 1.2rem}
+    .acc-name{font-weight:500;font-size:.9rem;color:var(--black);margin-bottom:.3rem}
+    .acc-price{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:#16a34a}
+
+    /* ── GALLERY ── */
+    #galleria{padding:100px 7vw;background:var(--white)}
+    .gallery-g{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      grid-template-rows:auto auto;
+      gap:1rem;margin-top:3rem;
+    }
+    .g-cell{border-radius:var(--r);overflow:hidden;background:var(--gray2);cursor:pointer;transition:transform .3s;position:relative}
+    .g-cell:hover{transform:scale(1.015)}
+    .g-cell img{width:100%;height:100%;object-fit:contain;background:#f0f2ed;display:block;padding:8px}
+    .g-cell:nth-child(1){grid-column:span 2;aspect-ratio:16/9}
+    .g-cell:nth-child(2){aspect-ratio:3/4}
+    .g-cell:nth-child(3){aspect-ratio:4/3}
+    .g-cell:nth-child(4){aspect-ratio:4/3}
+    .g-cell:nth-child(5){aspect-ratio:4/3}
+    .g-cell:nth-child(6){aspect-ratio:4/3}
+
+    /* ── CTA STRIP ── */
+    #cta-strip{
+      background:linear-gradient(135deg,#0f2411 0%,#1a3a1e 50%,#0a1a0c 100%);
+      padding:80px 7vw;text-align:center;position:relative;overflow:hidden;
+    }
+    #cta-strip::before{
+      content:'';position:absolute;inset:0;
+      background:radial-gradient(ellipse at 50% 0%,rgba(74,222,128,.15) 0%,transparent 60%);
+    }
+    #cta-strip h2{font-family:'Syne',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:800;color:#fff;position:relative;z-index:1;margin-bottom:1rem}
+    #cta-strip p{color:rgba(255,255,255,.5);font-size:1rem;font-weight:300;max-width:500px;margin:0 auto 2.5rem;position:relative;z-index:1;line-height:1.8}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+
+    /* ── CONTACT ── */
+    #contatti{padding:100px 7vw;background:var(--gray1)}
+    .contact-g{display:grid;grid-template-columns:5fr 7fr;gap:6rem;margin-top:3.5rem}
+    .contact-info h3{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:700;color:var(--black);margin-bottom:2rem}
+    .info-r{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--border)}
+    .info-r:last-of-type{border:none}
+    .info-ico{width:38px;height:38px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.95rem}
+    .info-lb{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+    .info-v{font-size:.95rem;font-weight:500;color:var(--black)}
+    .info-v a{color:inherit;text-decoration:none}
+    .info-v a:hover{color:#16a34a}
+    .wa-card{
+      background:linear-gradient(135deg,#075e54,#128c7e);
+      border-radius:var(--r);padding:1.5rem;margin-top:1.5rem;
+      display:flex;align-items:center;gap:1.2rem;
+      text-decoration:none;transition:transform .2s,box-shadow .2s;
+    }
+    .wa-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(18,140,126,.3)}
+    .wa-card-icon{font-size:2rem;flex-shrink:0}
+    .wa-card-text strong{color:#fff;display:block;font-weight:600;font-size:.95rem;margin-bottom:.2rem}
+    .wa-card-text span{color:rgba(255,255,255,.7);font-size:.82rem}
+    .cform{display:flex;flex-direction:column;gap:1rem}
+    .fr2{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .fg{display:flex;flex-direction:column;gap:.35rem}
+    .fg label{font-size:.75rem;font-weight:500;color:var(--muted);letter-spacing:.04em}
+    .fg input,.fg select,.fg textarea{
+      padding:.72rem .95rem;border:1px solid var(--gray2);border-radius:var(--r);
+      font-family:'Inter',sans-serif;font-size:.9rem;color:var(--text);
+      background:#fff;outline:none;transition:border-color .2s,box-shadow .2s;
+    }
+    .fg input:focus,.fg select:focus,.fg textarea:focus{border-color:#16a34a;box-shadow:0 0 0 3px rgba(74,222,128,.1)}
+    .fg textarea{resize:vertical;min-height:110px}
+    .btn-send{
+      background:var(--black);color:#fff;
+      padding:.85rem 2rem;border-radius:var(--r);
+      font-family:'Syne',sans-serif;font-size:.9rem;font-weight:700;
+      border:none;cursor:pointer;align-self:flex-start;
+      transition:background .2s;letter-spacing:.02em;
+    }
+    .btn-send:hover{background:var(--green)}
+
+    /* ── FOOTER ── */
+    footer{background:var(--black);padding:60px 7vw 28px;color:rgba(255,255,255,.4)}
+    .foot-g{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+    .foot-logo{display:flex;align-items:center;gap:10px;margin-bottom:1rem;text-decoration:none}
+    .foot-logo img{height:28px;filter:brightness(0)invert(1);opacity:.8}
+    .foot-logo-t{font-family:'Syne',sans-serif;font-weight:700;font-size:1rem;color:rgba(255,255,255,.8);letter-spacing:.04em}
+    .foot-brand p{font-size:.83rem;line-height:1.85;color:rgba(255,255,255,.32);margin-top:.5rem}
+    .foot-col h4{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.6);margin-bottom:1.1rem}
+    .foot-col ul{list-style:none}
+    .foot-col li{margin-bottom:.5rem}
+    .foot-col a{text-decoration:none;font-size:.83rem;color:rgba(255,255,255,.32);transition:color .2s}
+    .foot-col a:hover{color:var(--accent)}
+    .foot-bottom{border-top:1px solid rgba(255,255,255,.07);padding-top:1.3rem;display:flex;justify-content:space-between;font-size:.77rem;flex-wrap:wrap;gap:.5rem}
+    .foot-wa{display:inline-flex;align-items:center;gap:6px;background:#25D366;color:#fff;padding:.4rem .9rem;border-radius:100px;font-size:.78rem;font-weight:500;text-decoration:none;transition:background .2s}
+    .foot-wa:hover{background:#1ebe5a}
+
+    /* ── SHARED ── */
+    .section-eyebrow{
+      display:inline-flex;align-items:center;gap:.6rem;
+      font-size:.7rem;font-weight:600;letter-spacing:.2em;
+      color:#16a34a;text-transform:uppercase;margin-bottom:.9rem;
+    }
+    .section-eyebrow::before{content:'';width:20px;height:1.5px;background:currentColor}
+    h2.sh{
+      font-family:'Syne',sans-serif;font-size:clamp(1.9rem,3vw,2.7rem);
+      font-weight:800;line-height:1.1;color:var(--black);
+      margin-bottom:1rem;letter-spacing:-.02em;
+    }
+    .section-sub{font-size:.97rem;color:var(--muted);max-width:520px;font-weight:300;line-height:1.85}
+
+    /* ── REVEAL ── */
+    .rv{opacity:0;transform:translateY(24px);transition:opacity .7s,transform .7s}
+    .rv.in{opacity:1;transform:none}
+
+    /* ── MOBILE ── */
+    @media(max-width:960px){
+      #hero{grid-template-columns:1fr}
+      .hero-right{display:none}
+      .hero-left{padding:0 6vw 80px}
+      .uses-grid{grid-template-columns:repeat(2,1fr)}
+      .uses-header{grid-template-columns:1fr}
+      .adv-grid{grid-template-columns:1fr}
+      .contact-g{grid-template-columns:1fr;gap:3rem}
+      .foot-g{grid-template-columns:1fr 1fr}
+      .nav-links{display:none}
+      .burger{display:flex}
+    }
+    @media(max-width:580px){
+      #hero,#uses,#advantages,#prodotti,#galleria,#contatti,#cta-strip{padding-top:70px;padding-bottom:70px}
+      section{padding-left:5vw;padding-right:5vw}
+      .uses-grid{grid-template-columns:1fr 1fr}
+      .fr2{grid-template-columns:1fr}
+      .foot-g{grid-template-columns:1fr}
+      .gallery-g{grid-template-columns:1fr 1fr}
+      .g-cell:nth-child(1){grid-column:span 2}
+      .hero-stats{flex-wrap:wrap;gap:1.5rem}
+    }
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <a href="#" class="logo">
+    <img src="https://static.wixstatic.com/media/ee1d91_72045dd7ff914e30bbeacd0dc7060b7f~mv2.png/v1/fill/w_395,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/HQ1.png" alt="Everbox" />
+    <span class="logo-text">EVERBOX <span>Italia</span></span>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#uses">Usi</a></li>
+    <li><a href="#advantages">Vantaggi</a></li>
+    <li><a href="#prodotti">Prodotti</a></li>
+    <li><a href="#galleria">Galleria</a></li>
+    <li><a href="https://wa.me/393286191755" target="_blank" class="wa-btn-nav">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      WhatsApp
+    </a></li>
+    <li><a href="#contatti" class="nav-cta">Preventivo</a></li>
+  </ul>
+  <div class="burger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-badge">
+      <span>Nord Italia</span>
+      · Consegna &amp; Installazione
+    </div>
+    <h1>Lo spazio<br/>che ti<br/><span class="hl">mancava.</span></h1>
+    <p class="hero-desc">
+      Strutture modulari in alluminio con pannelli termoisolati da 38mm.
+      Montaggio in pochi giorni, senza permessi edilizi, senza cantiere. Dal Nord Italia a casa tua.
+    </p>
+    <div class="hero-btns">
+      <a href="#prodotti" class="btn-g">Vedi i modelli →</a>
+      <a href="https://wa.me/393286191755" target="_blank" class="btn-wa">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Scrivi su WhatsApp
+      </a>
+      <a href="#contatti" class="btn-o">Preventivo →</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <span class="s-num">10</span>
+        <div class="s-label">Anni di garanzia</div>
+      </div>
+      <div>
+        <span class="s-num">38mm</span>
+        <div class="s-label">Pannelli isolati</div>
+      </div>
+      <div>
+        <span class="s-num">2 colori</span>
+        <div class="s-label">Bianco / Antracite</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <img src="https://static.wixstatic.com/media/ee1d91_6e041e52a93c4cbf9a43eee49a59a97a~mv2.png/v1/fill/w_700,h_394,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/ee1d91_6e041e52a93c4cbf9a43eee49a59a97a~mv2.png" alt="Everbox shed" />
+  </div>
+</section>
+
+<!-- USES -->
+<section id="uses">
+  <div class="uses-header rv">
+    <div>
+      <p class="section-eyebrow">Mille usi, una struttura</p>
+      <h2 class="sh">Non è solo un casotto.<br/>È uno spazio tutto tuo.</h2>
+    </div>
+    <p class="uses-intro">
+      Le strutture Everbox sono state usate come cliniche estetiche, studi dentistici, chioschi gastronomici, uffici, palestre, laboratori e molto altro. La stessa struttura modulare si adatta a ogni progetto — in pochi giorni, senza permessi edilizi in molti casi.
+    </p>
+  </div>
+  <div class="uses-grid rv">
+    <div class="use-card">
+      <span class="use-icon">🏠</span>
+      <div class="use-title">Stanza Aggiuntiva</div>
+      <p class="use-desc">Monolocale per ospiti, camera extra, spazio hobby. Isolata e abitabile tutto l'anno.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">💻</span>
+      <div class="use-title">Ufficio da Giardino</div>
+      <p class="use-desc">Lavora da casa in uno spazio separato, silenzioso e professionale. Connessione WiFi, elettricità, clima.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">🏥</span>
+      <div class="use-title">Studio / Clinica</div>
+      <p class="use-desc">Usata da medici, fisioterapisti, estetiste e dentisti come studio professionale privato.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">💈</span>
+      <div class="use-title">Salone di Bellezza</div>
+      <p class="use-desc">Avvia il tuo salone in giardino. Struttura pulita, moderna, con finestre e ventilazione.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">🏋️</span>
+      <div class="use-title">Palestra Privata</div>
+      <p class="use-desc">Il tuo spazio fitness personale a pochi passi da casa. Pavimento rinforzato, isolamento acustico.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">🍕</span>
+      <div class="use-title">Chiosco / Street Food</div>
+      <p class="use-desc">Apri un punto ristoro, un bar o un chiosco in struttura pronta in pochi giorni.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">📦</span>
+      <div class="use-title">Deposito Attrezzature</div>
+      <p class="use-desc">Sicuro, stabile, asciutto. Per bici, attrezzi, inventario commerciale o prodotti agricoli.</p>
+    </div>
+    <div class="use-card">
+      <span class="use-icon">🎨</span>
+      <div class="use-title">Studio Creativo</div>
+      <p class="use-desc">Atelier d'arte, sala prove musicale, studio fotografico. Spazio tutto tuo, silenzioso e isolato.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ADVANTAGES -->
+<section id="advantages">
+  <div class="rv">
+    <p class="section-eyebrow">Perché Everbox</p>
+    <h2 class="sh" style="color:#fff">Costruito meglio.<br/>Installato più veloce.</h2>
+    <p class="section-sub">Materiali premium, tecnologia modulare, garanzia decennale. Non è un prefabbricato qualunque.</p>
+  </div>
+  <div class="adv-grid rv">
+    <div class="adv-item">
+      <div class="adv-num">01</div>
+      <div class="adv-tag">Materiali</div>
+      <div class="adv-title">Telaio 100% Alluminio</div>
+      <p class="adv-text">Nessuna ruggine, nessuna manutenzione. Il telaio in alluminio è leggero, resistente e duraturo decenni senza verniciatura.</p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">02</div>
+      <div class="adv-tag">Comfort</div>
+      <div class="adv-title">Isolamento Termoacustico 38mm</div>
+      <p class="adv-text">Pannelli PVC con polistirene estruso (XPS) da 38mm. Caldo d'inverno, fresco d'estate. Silenzioso tutto l'anno.</p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">03</div>
+      <div class="adv-tag">Velocità</div>
+      <div class="adv-title">Installazione in Pochi Giorni</div>
+      <p class="adv-text">Sistema modulare ad incastro. Niente calcestruzzo, niente gru, niente cantiere. Il tuo spazio pronto in pochissimo tempo.</p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">04</div>
+      <div class="adv-tag">Garanzia</div>
+      <div class="adv-title">10 Anni di Garanzia</div>
+      <p class="adv-text">Ogni struttura è coperta da garanzia strutturale decennale. Investimento solido per uso residenziale, commerciale e professionale.</p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">05</div>
+      <div class="adv-tag">Design</div>
+      <div class="adv-title">Due Palette: Bianco o Antracite</div>
+      <p class="adv-text">Bianco classico o grigio antracite moderno. Entrambe le opzioni si integrano perfettamente in giardini, cortili e spazi urbani.</p>
+    </div>
+    <div class="adv-item">
+      <div class="adv-num">06</div>
+      <div class="adv-tag">Flessibilità</div>
+      <div class="adv-title">Personalizzabile e Modulare</div>
+      <p class="adv-text">Finestre scorrevoli, pareti in vetro, pannello elettrico, griglie di ventilazione. Aggiungi ciò che serve al tuo progetto.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section id="prodotti">
+  <div class="rv">
+    <p class="section-eyebrow">Catalogo Prodotti</p>
+    <h2 class="sh">Scegli il tuo modello</h2>
+    <p class="section-sub">6 dimensioni disponibili in pannello bianco o grigio antracite. Prezzi inclusi di pavimento e lucernario.</p>
+  </div>
+  <div class="tab-row rv">
+    <button class="tab on" onclick="showTab('b',this)">⬜ Pannelli Bianchi</button>
+    <button class="tab" onclick="showTab('g',this)">◼ Grigio Antracite</button>
+    <button class="tab" onclick="showTab('a',this)">✦ Accessori</button>
+  </div>
+
+  <!-- WHITE -->
+  <div class="panel on" id="p-b">
+    <div class="prod-grid">
+      <div class="p-card rv">
+        <img src="https://static.wixstatic.com/media/ee1d91_2da26a4ca0114e269f6de6bdab1d6cee~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_2da26a4ca0114e269f6de6bdab1d6cee~mv2.png" alt="Everbox 2x2 Bianco"/>
+        <div class="p-body">
+          <div class="p-tag">Bianco · 2m × 2m</div>
+          <div class="p-name">Everbox 2×2</div>
+          <ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul>
+          <div class="p-foot"><div class="p-price">€ 2.269 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%202x2%20Bianco%20-%20€2.269.%20Potete%20darmi%20più%20informazioni?" target="_blank" class="btn-buy">Acquista →</a></div>
+        </div>
+      </div>
+      <div class="p-card rv" style="transition-delay:.07s">
+        <img src="https://static.wixstatic.com/media/ee1d91_f0bb6f4724eb40db9c9ddc5db48fcf66~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_f0bb6f4724eb40db9c9ddc5db48fcf66~mv2.png" alt="Everbox 3x2 Bianco"/>
+        <div class="p-body">
+          <div class="p-tag">Bianco · 3m × 2m</div>
+          <div class="p-name">Everbox 3×2</div>
+          <ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul>
+          <div class="p-foot"><div class="p-price">€ 2.849 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x2%20Bianco%20-%20€2.849.%20Potete%20darmi%20più%20informazioni?" target="_blank" class="btn-buy">Acquista →</a></div>
+        </div>
+      </div>
+      <div class="p-card rv" style="transition-delay:.14s">
+        <img src="https://static.wixstatic.com/media/ee1d91_f8f8c827e81f4a529d72f85b2d80560f~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_f8f8c827e81f4a529d72f85b2d80560f~mv2.png" alt="Everbox 4x2 Bianco"/>
+        <div class="p-body">
+          <div class="p-tag">Bianco · 4m × 2m</div>
+          <div class="p-name">Everbox 4×2</div>
+          <ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul>
+          <div class="p-foot"><div class="p-price">€ 3.399 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%204x2%20Bianco%20-%20€3.399.%20Potete%20darmi%20più%20informazioni?" target="_blank" class="btn-buy">Acquista →</a></div>
+        </div>
+      </div>
+      <div class="p-card rv" style="transition-delay:.21s">
+        <img src="https://static.wixstatic.com/media/ee1d91_67137ee10a794af8b54b43facc887aeb~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_67137ee10a794af8b54b43facc887aeb~mv2.png" alt="Everbox 3x3 Bianco"/>
+        <div class="p-body">
+          <div class="p-tag">Bianco · 3m × 3m</div>
+          <div class="p-name">Everbox 3×3</div>
+          <ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul>
+          <div class="p-foot"><div class="p-price">€ 3.589 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x3%20Bianco%20-%20€3.589.%20Potete%20darmi%20più%20informazioni?" target="_blank" class="btn-buy">Acquista →</a></div>
+        </div>
+      </div>
+      <div class="p-card rv" style="transition-delay:.28s">
+        <img src="https://static.wixstatic.com/media/ee1d91_ff65b14132be44a7b97cdb46dc422596~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_ff65b14132be44a7b97cdb46dc422596~mv2.png" alt="Everbox 4x3 Bianco"/>
+        <div class="p-body">
+          <div class="p-tag">Bianco · 4m × 3m</div>
+          <div class="p-name">Everbox 4×3</div>
+          <ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul>
+          <div class="p-foot"><div class="p-price">€ 4.249 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%204x3%20Bianco%20-%20€4.249.%20Potete%20darmi%20più%20informazioni?" target="_blank" class="btn-buy">Acquista →</a></div>
+        </div>
+      </div>
+      <div class="p-card rv" style="transition-delay:.35s">
+        <img src="https://static.wixstatic.com/media/ee1d91_f4390e1fbcb8440782288442e00e7ecf~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_f4390e1fbcb8440782288442e00e7ecf~mv2.png" alt="Everbox 5x3 Bianco"/>
+        <div class="p-body">
+          <div class="p-tag">Bianco · 5m × 3m</div>
+          <div class="p-name">Everbox 5×3</div>
+          <ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul>
+          <div class="p-foot"><div class="p-price">€ 4.965 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%205x3%20Bianco%20-%20€4.965.%20Potete%20darmi%20più%20informazioni?" target="_blank" class="btn-buy">Acquista →</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GREY -->
+  <div class="panel" id="p-g">
+    <div class="prod-grid">
+      <div class="p-card rv"><img src="https://static.wixstatic.com/media/ee1d91_4adb58789c35405a830d4aa10f604fbb~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_4adb58789c35405a830d4aa10f604fbb~mv2.png" alt="2x2 Grigio"/><div class="p-body"><div class="p-tag">Antracite · 2m × 2m</div><div class="p-name">Everbox 2×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€ 2.339 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%202x2%20Grigio%20-%20€2.339." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.07s"><img src="https://static.wixstatic.com/media/ee1d91_7ac65945b7e0450b943431b6ffbf5fb4~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_7ac65945b7e0450b943431b6ffbf5fb4~mv2.png" alt="3x2 Grigio"/><div class="p-body"><div class="p-tag">Antracite · 3m × 2m</div><div class="p-name">Everbox 3×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€ 2.939 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x2%20Grigio%20-%20€2.939." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.14s"><img src="https://static.wixstatic.com/media/ee1d91_28f9a179afcb445aa8bebece642f6682~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_28f9a179afcb445aa8bebece642f6682~mv2.png" alt="4x2 Grigio"/><div class="p-body"><div class="p-tag">Antracite · 4m × 2m</div><div class="p-name">Everbox 4×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€ 3.499 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%204x2%20Grigio%20-%20€3.499." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.21s"><img src="https://static.wixstatic.com/media/ee1d91_89aaa1514ea349348165dc8de5324d1a~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_89aaa1514ea349348165dc8de5324d1a~mv2.png" alt="3x3 Grigio"/><div class="p-body"><div class="p-tag">Antracite · 3m × 3m</div><div class="p-name">Everbox 3×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€ 3.699 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x3%20Grigio%20-%20€3.699." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.28s"><img src="https://static.wixstatic.com/media/ee1d91_d124088a4b974e098e878c26a33c45ec~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_d124088a4b974e098e878c26a33c45ec~mv2.png" alt="4x3 Grigio"/><div class="p-body"><div class="p-tag">Antracite · 4m × 3m</div><div class="p-name">Everbox 4×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€ 4.379 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%204x3%20Grigio%20-%20€4.379." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.35s"><img src="https://static.wixstatic.com/media/ee1d91_4dc1d34158004c8a9f1e199615c2a757~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_4dc1d34158004c8a9f1e199615c2a757~mv2.png" alt="5x3 Grigio"/><div class="p-body"><div class="p-tag">Antracite · 5m × 3m</div><div class="p-name">Everbox 5×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento polipropilene 35mm</li><li>Lucernario vetro 5mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€ 5.119 <small>IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%205x3%20Grigio%20-%20€5.119." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+    </div>
+  </div>
+
+  <!-- ACCESSORIES -->
+  <div class="panel" id="p-a">
+    <div class="acc-grid rv">
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_a71bc91509e1425a8eddcf412c7a1aff~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_a71bc91509e1425a8eddcf412c7a1aff~mv2.jpg" alt="Finestra"/><div class="acc-body"><div class="acc-name">Finestra Scorrevole</div><div class="acc-price">€ 319</div></div></div>
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_2c9a0eba35d04a51adb357743b54b40c~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_2c9a0eba35d04a51adb357743b54b40c~mv2.jpg" alt="Pannello Elettrico"/><div class="acc-body"><div class="acc-name">Pannello Elettrico</div><div class="acc-price">€ 499</div></div></div>
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_8bef0cab157544b28f353353a6ea9a56~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_8bef0cab157544b28f353353a6ea9a56~mv2.jpg" alt="Parete Vetro"/><div class="acc-body"><div class="acc-name">Parete in Vetro (con tenda)</div><div class="acc-price">€ 539</div></div></div>
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_f94852a181a04702889d149b6f5b0295~mv2.webp/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_f94852a181a04702889d149b6f5b0295~mv2.webp" alt="Griglia"/><div class="acc-body"><div class="acc-name">Griglia di Ventilazione</div><div class="acc-price">€ 43,90</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="galleria">
+  <div class="rv">
+    <p class="section-eyebrow">Galleria</p>
+    <h2 class="sh">Tutti i modelli</h2>
+    <p class="section-sub">Bianco o Antracite — entrambi si integrano perfettamente in qualsiasi contesto.</p>
+  </div>
+  <div class="gallery-g rv">
+    <div class="g-cell"><img src="https://static.wixstatic.com/media/ee1d91_ff65b14132be44a7b97cdb46dc422596~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_ff65b14132be44a7b97cdb46dc422596~mv2.png" alt="4x3 bianco"/></div>
+    <div class="g-cell"><img src="https://static.wixstatic.com/media/ee1d91_4dc1d34158004c8a9f1e199615c2a757~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_4dc1d34158004c8a9f1e199615c2a757~mv2.png" alt="5x3 grigio"/></div>
+    <div class="g-cell"><img src="https://static.wixstatic.com/media/ee1d91_2da26a4ca0114e269f6de6bdab1d6cee~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_2da26a4ca0114e269f6de6bdab1d6cee~mv2.png" alt="2x2"/></div>
+    <div class="g-cell"><img src="https://static.wixstatic.com/media/ee1d91_89aaa1514ea349348165dc8de5324d1a~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_89aaa1514ea349348165dc8de5324d1a~mv2.png" alt="3x3 grigio"/></div>
+    <div class="g-cell"><img src="https://static.wixstatic.com/media/ee1d91_f4390e1fbcb8440782288442e00e7ecf~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_f4390e1fbcb8440782288442e00e7ecf~mv2.png" alt="5x3 bianco"/></div>
+    <div class="g-cell"><img src="https://static.wixstatic.com/media/ee1d91_d124088a4b974e098e878c26a33c45ec~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_d124088a4b974e098e878c26a33c45ec~mv2.png" alt="4x3 grigio"/></div>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section id="cta-strip">
+  <h2>Hai un progetto in mente?</h2>
+  <p>Il nostro consulente risponde su WhatsApp entro poche ore. Oppure scrivi via email e ti richiamiamo noi.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/393286191755?text=Ciao!%20Vorrei%20informazioni%20su%20Everbox%20Italia." target="_blank" class="btn-wa" style="font-size:1rem;padding:1rem 2.2rem">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Scrivi su WhatsApp
+    </a>
+    <a href="#contatti" class="btn-g" style="font-size:1rem;padding:1rem 2.2rem">Compila il modulo →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contatti">
+  <div class="rv">
+    <p class="section-eyebrow">Contatti</p>
+    <h2 class="sh">Parliamoci.</h2>
+    <p class="section-sub">Rispondiamo entro 24 ore. Puoi anche scriverci direttamente su WhatsApp.</p>
+  </div>
+  <div class="contact-g">
+    <div class="rv">
+      <h3>Il tuo consulente</h3>
+      <div class="info-r">
+        <div class="info-ico">📞</div>
+        <div>
+          <div class="info-lb">Telefono</div>
+          <div class="info-v"><a href="tel:+393286191755">+39 328 619 1755</a></div>
+        </div>
+      </div>
+      <div class="info-r">
+        <div class="info-ico">✉️</div>
+        <div>
+          <div class="info-lb">Email</div>
+          <div class="info-v"><a href="mailto:europe@everbox.co.il">europe@everbox.co.il</a></div>
+        </div>
+      </div>
+      <div class="info-r">
+        <div class="info-ico">📍</div>
+        <div>
+          <div class="info-lb">Area di Copertura</div>
+          <div class="info-v">Nord Italia</div>
+        </div>
+      </div>
+      <div class="info-r">
+        <div class="info-ico">🕐</div>
+        <div>
+          <div class="info-lb">Disponibilità</div>
+          <div class="info-v">Lun–Ven, 9:00–18:00</div>
+        </div>
+      </div>
+      <a href="https://wa.me/393286191755?text=Ciao!%20Vorrei%20informazioni%20su%20Everbox%20Italia.%20Puoi%20aiutarmi?" target="_blank" class="wa-card">
+        <div class="wa-card-icon">💬</div>
+        <div class="wa-card-text">
+          <strong>Scrivici su WhatsApp</strong>
+          <span>Risposta rapida · +39 328 619 1755</span>
+        </div>
+      </a>
+    </div>
+    <form class="cform rv" onsubmit="sendForm(event)">
+      <div class="fr2">
+        <div class="fg"><label>Nome *</label><input type="text" placeholder="Mario" required/></div>
+        <div class="fg"><label>Cognome *</label><input type="text" placeholder="Rossi" required/></div>
+      </div>
+      <div class="fr2">
+        <div class="fg"><label>Email *</label><input type="email" placeholder="mario@email.it" required/></div>
+        <div class="fg"><label>Telefono</label><input type="tel" placeholder="+39 333 000 0000"/></div>
+      </div>
+      <div class="fg">
+        <label>Modello di interesse</label>
+        <select>
+          <option value="">Seleziona…</option>
+          <option>Everbox 2×2 – Bianco (€ 2.269)</option>
+          <option>Everbox 3×2 – Bianco (€ 2.849)</option>
+          <option>Everbox 4×2 – Bianco (€ 3.399)</option>
+          <option>Everbox 3×3 – Bianco (€ 3.589)</option>
+          <option>Everbox 4×3 – Bianco (€ 4.249)</option>
+          <option>Everbox 5×3 – Bianco (€ 4.965)</option>
+          <option>Everbox 2×2 – Grigio Antracite (€ 2.339)</option>
+          <option>Everbox 3×2 – Grigio Antracite (€ 2.939)</option>
+          <option>Everbox 4×2 – Grigio Antracite (€ 3.499)</option>
+          <option>Everbox 3×3 – Grigio Antracite (€ 3.699)</option>
+          <option>Everbox 4×3 – Grigio Antracite (€ 4.379)</option>
+          <option>Everbox 5×3 – Grigio Antracite (€ 5.119)</option>
+          <option>Soluzione personalizzata</option>
+        </select>
+      </div>
+      <div class="fg"><label>Messaggio</label><textarea placeholder="Raccontaci il tuo progetto — uso previsto, spazio disponibile, tempistiche…"></textarea></div>
+      <button type="submit" class="btn-send">Invia Richiesta →</button>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-g">
+    <div class="foot-brand">
+      <a href="#" class="foot-logo">
+        <img src="https://static.wixstatic.com/media/ee1d91_72045dd7ff914e30bbeacd0dc7060b7f~mv2.png/v1/fill/w_395,h_72,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/HQ1.png" alt="Everbox"/>
+        <span class="foot-logo-t">EVERBOX Italia</span>
+      </a>
+      <p>Distributore ufficiale Everbox per il Nord Italia. Strutture modulari in alluminio con pannelli termoisolati — dall'ufficio alla clinica, dal deposito allo studio.</p>
+      <a href="https://wa.me/393286191755" target="_blank" class="foot-wa" style="display:inline-flex;margin-top:1rem">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        +39 328 619 1755
+      </a>
+    </div>
+    <div class="foot-col">
+      <h4>Prodotti</h4>
+      <ul>
+        <li><a href="#prodotti">Pannelli Bianchi</a></li>
+        <li><a href="#prodotti">Pannelli Antracite</a></li>
+        <li><a href="#prodotti">Accessori</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Utilizzi</h4>
+      <ul>
+        <li><a href="#uses">Ufficio</a></li>
+        <li><a href="#uses">Studio / Clinica</a></li>
+        <li><a href="#uses">Deposito</a></li>
+        <li><a href="#uses">Salone</a></li>
+      </ul>
+    </div>
+    <div class="foot-col">
+      <h4>Info</h4>
+      <ul>
+        <li><a href="#advantages">Vantaggi</a></li>
+        <li><a href="#contatti">Contatti</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Cookie Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bottom">
+    <span>© 2025 Everbox Italia. Tutti i diritti riservati. Nord Italia.</span>
+    <span><a href="mailto:europe@everbox.co.il" style="color:inherit;text-decoration:none">europe@everbox.co.il</a></span>
+  </div>
+</footer>
+
+<script>
+  // Tab switching
+  function showTab(id, btn) {
+    document.querySelectorAll('.panel').forEach(p => p.classList.remove('on'));
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('on'));
+    document.getElementById('p-' + id).classList.add('on');
+    btn.classList.add('on');
+    // Re-trigger reveals in newly shown panel
+    document.querySelectorAll('#p-' + id + ' .rv').forEach(el => {
+      el.classList.remove('in');
+      setTimeout(() => observer.observe(el), 10);
+    });
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); observer.unobserve(e.target); }});
+  }, { threshold: 0.08, rootMargin: '0px 0px -32px 0px' });
+  document.querySelectorAll('.rv').forEach(el => observer.observe(el));
+
+  // Nav scroll
+  window.addEventListener('scroll', () => {
+    document.getElementById('mainNav').classList.toggle('up', window.scrollY > 30);
+  });
+
+  // Mobile nav
+  function toggleNav() {
+    const ul = document.getElementById('navLinks');
+    const open = ul.style.display === 'flex';
+    ul.style.cssText = open ? '' : 'display:flex;flex-direction:column;position:fixed;top:64px;left:0;right:0;background:rgba(248,250,246,0.98);padding:1.5rem 5vw 2rem;border-bottom:1px solid var(--border);gap:1rem;z-index:199;backdrop-filter:blur(20px)';
+  }
+
+  // Form
+  function sendForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.btn-send');
+    btn.textContent = '✓ Richiesta inviata!';
+    btn.style.background = '#16a34a';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
