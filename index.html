@@ -294,6 +294,8 @@
       #disegni .drawing-grid{grid-template-columns:1fr!important}
     }
     @media(max-width:580px){
+      .gallery-strip{grid-template-columns:1fr!important}
+
       #uses,#advantages,#prodotti,#cta,#contatti{padding-top:60px;padding-bottom:60px}
       #uses,#advantages,#prodotti,#cta,#contatti{padding-left:5vw;padding-right:5vw}
       .uses-grid{grid-template-columns:1fr 1fr}
@@ -345,7 +347,7 @@
 <!-- HERO -->
 <section id="hero">
   <div class="hero-bg">
-    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/hero.jpg" alt="Everbox shed office"/>
+    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img1.jpg" alt="Everbox shed office"/>
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -390,6 +392,33 @@
   </div>
 </section>
 
+
+<!-- RENDER GALLERY STRIP -->
+<section style="padding:0;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:2px">
+  <div style="overflow:hidden;aspect-ratio:16/10;position:relative">
+    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img2.jpg"
+         alt="Everbox ufficio giardino"
+         style="width:100%;height:100%;object-fit:cover;transition:transform .6s"
+         onmouseover="this.style.transform='scale(1.04)'"
+         onmouseout="this.style.transform='scale(1)'" />
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 2rem;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)">
+      <div style="color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem">Utilizzo</div>
+      <div style="color:#fff;font-weight:700;font-size:1.05rem">Ufficio da Giardino</div>
+    </div>
+  </div>
+  <div style="overflow:hidden;aspect-ratio:16/10;position:relative">
+    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img4.jpg"
+         alt="Everbox studio professionale"
+         style="width:100%;height:100%;object-fit:cover;transition:transform .6s"
+         onmouseover="this.style.transform='scale(1.04)'"
+         onmouseout="this.style.transform='scale(1)'" />
+    <div style="position:absolute;bottom:0;left:0;right:0;padding:1.5rem 2rem;background:linear-gradient(to top,rgba(0,0,0,.7),transparent)">
+      <div style="color:rgba(255,255,255,.6);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem">Utilizzo</div>
+      <div style="color:#fff;font-weight:700;font-size:1.05rem">Studio Professionale</div>
+    </div>
+  </div>
+</section>
+
 <!-- ADVANTAGES -->
 <section id="advantages">
   <div class="rv">
@@ -406,6 +435,20 @@
     <div class="adv-item"><div class="adv-n">06</div><div class="adv-tag">Flessibilità</div><div class="adv-title">Su Misura</div><p class="adv-text">Finestre, pareti vetro, pannello elettrico, ventilazione. Tutto configurabile.</p></div>
   </div>
 </section>
+
+
+<!-- FULL WIDTH RENDER -->
+<div style="position:relative;overflow:hidden;height:420px">
+  <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img3.jpg"
+       alt="Everbox render esterno"
+       style="width:100%;height:100%;object-fit:cover;object-position:center 40%" />
+  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,13,11,.75) 0%,rgba(12,13,11,.1) 60%)"></div>
+  <div style="position:absolute;top:50%;left:7vw;transform:translateY(-50%)">
+    <div style="font-size:.7rem;font-weight:700;letter-spacing:.18em;color:#4ade80;text-transform:uppercase;margin-bottom:.8rem">Everbox Italia</div>
+    <div style="font-family:var(--font);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.2rem">Costruito per durare.<br/>Pensato per vivere.</div>
+    <a href="#prodotti" style="display:inline-flex;align-items:center;gap:8px;background:#22c55e;color:#0c0d0b;padding:.75rem 1.6rem;border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none">Vedi i modelli →</a>
+  </div>
+</div>
 
 <!-- PRODUCTS -->
 <section id="prodotti">
