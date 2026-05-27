@@ -570,10 +570,10 @@
 
   <!-- Drawing selector tabs -->
   <div style="display:flex;gap:0;margin:2.5rem 0 2rem;border-bottom:1px solid var(--border)" class="rv">
-    <button class="dtab on" onclick="showDrawing('3x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid #16a34a;color:var(--black);font-family:var(--font);font-size:.82rem;font-weight:600;cursor:pointer">3×2 m</button>
-    <button class="dtab" onclick="showDrawing('3x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">3×3 m</button>
-    <button class="dtab" onclick="showDrawing('4x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">4×3 m</button>
-    <button class="dtab" onclick="showDrawing('5x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">5×3 m</button>
+    <button class="dtab on" onclick="showDrawing('3x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid #16a34a;color:#0c0d0b;font-family:var(--font);font-size:.82rem;font-weight:600;cursor:pointer">3×2 m</button>
+    <button class="dtab" onclick="showDrawing('3x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">3×3 m</button>
+    <button class="dtab" onclick="showDrawing('4x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">4×3 m</button>
+    <button class="dtab" onclick="showDrawing('5x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">5×3 m</button>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start" class="rv drawing-grid">
@@ -799,11 +799,11 @@
   function showDrawing(id, btn) {
     document.querySelectorAll('.dtab').forEach(t => {
       t.style.borderBottomColor = 'transparent';
-      t.style.color = 'rgba(255,255,255,.35)';
+      t.style.color = '#6b7566';
       t.style.fontWeight = '400';
     });
     btn.style.borderBottomColor = '#16a34a';
-    btn.style.color = 'var(--black)';
+    btn.style.color = '#0c0d0b';
     btn.style.fontWeight = '600';
     const img = document.getElementById('drawing-img');
     img.style.opacity = '0';
