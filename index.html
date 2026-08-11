@@ -498,12 +498,16 @@
 
 
 <!-- FULL WIDTH RENDER -->
-<div style="position:relative;overflow:hidden;height:420px">
+<div style="position:relative;overflow:hidden;background:#0c0d0b;padding:40px 0">
+  <!-- Fades on sides -->
+  <div style="position:absolute;top:0;left:0;bottom:0;width:180px;background:linear-gradient(to right,#0c0d0b,transparent);z-index:2;pointer-events:none"></div>
+  <div style="position:absolute;top:0;right:0;bottom:0;width:180px;background:linear-gradient(to left,#0c0d0b,transparent);z-index:2;pointer-events:none"></div>
+  <!-- Image centered, full visible -->
   <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img_fullwidth.jpg"
        alt="Everbox render esterno"
-       style="width:100%;height:100%;object-fit:cover;object-position:center 40%" />
-  <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(12,13,11,.75) 0%,rgba(12,13,11,.1) 60%)"></div>
-  <div style="position:absolute;top:50%;left:7vw;transform:translateY(-50%)">
+       style="display:block;width:70%;max-width:900px;height:auto;object-fit:contain;margin:0 auto;position:relative;z-index:1" />
+  <!-- Text overlay -->
+  <div style="position:absolute;top:50%;left:7vw;transform:translateY(-50%);z-index:3">
     <div style="font-size:.7rem;font-weight:700;letter-spacing:.18em;color:#4ade80;text-transform:uppercase;margin-bottom:.8rem">Everbox Italia</div>
     <div style="font-family:var(--font);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.2rem">Costruito per durare.<br/>Pensato per vivere.</div>
     <a href="#prodotti" style="display:inline-flex;align-items:center;gap:8px;background:#22c55e;color:#0c0d0b;padding:.75rem 1.6rem;border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none">Vedi i modelli →</a>
