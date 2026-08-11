@@ -498,19 +498,27 @@
 
 
 <!-- FULL WIDTH RENDER -->
-<div style="position:relative;overflow:hidden;background:#0c0d0b;padding:40px 0">
-  <!-- Fades on sides -->
-  <div style="position:absolute;top:0;left:0;bottom:0;width:180px;background:linear-gradient(to right,#0c0d0b,transparent);z-index:2;pointer-events:none"></div>
-  <div style="position:absolute;top:0;right:0;bottom:0;width:180px;background:linear-gradient(to left,#0c0d0b,transparent);z-index:2;pointer-events:none"></div>
-  <!-- Image centered, full visible -->
+<div style="position:relative;overflow:hidden;height:500px;background:#0c0d0b">
+  <!-- Full bleed image, right-aligned -->
   <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img_fullwidth.jpg"
        alt="Everbox render esterno"
-       style="display:block;width:70%;max-width:900px;height:auto;object-fit:contain;margin:0 auto;position:relative;z-index:1" />
-  <!-- Text overlay -->
-  <div style="position:absolute;top:50%;left:7vw;transform:translateY(-50%);z-index:3">
-    <div style="font-size:.7rem;font-weight:700;letter-spacing:.18em;color:#4ade80;text-transform:uppercase;margin-bottom:.8rem">Everbox Italia</div>
-    <div style="font-family:var(--font);font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;color:#fff;line-height:1.1;margin-bottom:1.2rem">Costruito per durare.<br/>Pensato per vivere.</div>
-    <a href="#prodotti" style="display:inline-flex;align-items:center;gap:8px;background:#22c55e;color:#0c0d0b;padding:.75rem 1.6rem;border-radius:8px;font-weight:700;font-size:.9rem;text-decoration:none">Vedi i modelli →</a>
+       style="position:absolute;right:0;top:0;height:100%;width:65%;object-fit:cover;object-position:center center" />
+  <!-- Multi-layer overlay for seamless blend -->
+  <div style="position:absolute;inset:0;background:linear-gradient(to right, #0c0d0b 30%, rgba(12,13,11,.85) 50%, rgba(12,13,11,.3) 70%, rgba(12,13,11,.0) 100%)"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(to top, rgba(12,13,11,.6) 0%, transparent 40%)"></div>
+  <!-- Subtle green glow behind text -->
+  <div style="position:absolute;top:50%;left:4vw;transform:translateY(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(34,197,94,.08) 0%,transparent 70%);pointer-events:none"></div>
+  <!-- Text -->
+  <div style="position:absolute;top:50%;left:7vw;transform:translateY(-50%);z-index:2;max-width:480px">
+    <div style="display:inline-flex;align-items:center;gap:6px;font-size:.68rem;font-weight:700;letter-spacing:.18em;color:#22c55e;text-transform:uppercase;margin-bottom:1.2rem">
+      <span style="display:block;width:20px;height:1.5px;background:#22c55e"></span>Everbox Italia
+    </div>
+    <div style="font-family:var(--font);font-size:clamp(2rem,3.2vw,3.2rem);font-weight:800;color:#fff;line-height:1.05;margin-bottom:1rem;letter-spacing:-.02em">Costruito per durare.<br/>Pensato per vivere.</div>
+    <p style="font-size:.95rem;color:rgba(255,255,255,.5);font-weight:300;line-height:1.75;margin-bottom:1.8rem">Strutture modulari in alluminio con pannelli termoisolati. Installazione in pochi giorni, zero manutenzione.</p>
+    <div style="display:flex;gap:.8rem;flex-wrap:wrap">
+      <a href="#prodotti" style="display:inline-flex;align-items:center;gap:8px;background:#22c55e;color:#0c0d0b;padding:.78rem 1.6rem;border-radius:8px;font-weight:700;font-size:.88rem;text-decoration:none">Vedi i modelli →</a>
+      <a href="#contatti" style="display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.75);padding:.78rem 1.4rem;border-radius:8px;font-weight:400;font-size:.88rem;text-decoration:none">Preventivo gratuito</a>
+    </div>
   </div>
 </div>
 
