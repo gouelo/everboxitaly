@@ -158,7 +158,7 @@
     }
     .hero-overlay{
       position:absolute;inset:0;z-index:1;
-      background:linear-gradient(to right, rgba(12,13,11,.45) 30%, rgba(12,13,11,.0) 100%);
+      background:linear-gradient(to right, rgba(12,13,11,.30) 22%, rgba(12,13,11,.0) 100%);
     }
     .hero-content{
       position:relative;z-index:2;
@@ -452,7 +452,7 @@
 <!-- RENDER GALLERY STRIP -->
 <section style="padding:0;background:var(--black);display:grid;grid-template-columns:1fr 1fr;gap:2px">
   <div style="overflow:hidden;aspect-ratio:16/10;position:relative">
-    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img2.jpg"
+    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img_office.jpg"
          alt="Everbox ufficio giardino"
          style="width:100%;height:100%;object-fit:cover;transition:transform .6s"
          onmouseover="this.style.transform='scale(1.04)'"
@@ -463,7 +463,7 @@
     </div>
   </div>
   <div style="overflow:hidden;aspect-ratio:16/10;position:relative">
-    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img4.jpg"
+    <img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/renders/img_black43.jpg"
          alt="Everbox studio professionale"
          style="width:100%;height:100%;object-fit:cover;transition:transform .6s"
          onmouseover="this.style.transform='scale(1.04)'"
@@ -543,10 +543,10 @@
 
   <div class="panel" id="p-a">
     <div class="acc-grid rv">
-      <div class="acc-card"><img src="https://static.wixstatic.com/media/https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/window_closed.jpg" alt="Finestra"/><div class="acc-body"><div class="acc-name">Finestra Scorrevole (2 ante) – Nera</div><div class="acc-price">€319</div></div></div>
+      <div class="acc-card"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/window_closed.jpg" alt="Finestra"/><div class="acc-body"><div class="acc-name">Finestra Scorrevole (2 ante) – Nera</div><div class="acc-price">€319</div></div></div>
       <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_2c9a0eba35d04a51adb357743b54b40c~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_2c9a0eba35d04a51adb357743b54b40c~mv2.jpg" alt="Elettrico"/><div class="acc-body"><div class="acc-name">Pannello Elettrico</div><div class="acc-price">€499</div></div></div>
-      <div class="acc-card"><img src="https://static.wixstatic.com/media/https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/window_open.jpg" alt="Vetro"/><div class="acc-body"><div class="acc-name">Parete Vetro con Tenda – Nera</div><div class="acc-price">€539</div></div></div>
-      <div class="acc-card"><img src="https://static.wixstatic.com/media/https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/vent_black.jpg" alt="Griglia"/><div class="acc-body"><div class="acc-name">Griglia di Ventilazione – Nera</div><div class="acc-price">€43,90</div></div></div>
+      <div class="acc-card"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/window_open.jpg" alt="Vetro"/><div class="acc-body"><div class="acc-name">Parete Vetro con Tenda – Nera</div><div class="acc-price">€539</div></div></div>
+      <div class="acc-card"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/vent_black.jpg" alt="Griglia"/><div class="acc-body"><div class="acc-name">Griglia di Ventilazione – Nera</div><div class="acc-price">€43,90</div></div></div>
     </div>
   </div>
 </section>
@@ -576,8 +576,10 @@
   <div style="display:flex;gap:0;margin:2.5rem 0 2rem;border-bottom:1px solid var(--border)" class="rv">
     <button class="dtab on" onclick="showDrawing('3x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid #16a34a;color:#0c0d0b;font-family:var(--font);font-size:.82rem;font-weight:600;cursor:pointer">3×2 m</button>
     <button class="dtab" onclick="showDrawing('3x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">3×3 m</button>
+    <button class="dtab" onclick="showDrawing('4x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">4×2 m</button>
     <button class="dtab" onclick="showDrawing('4x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">4×3 m</button>
     <button class="dtab" onclick="showDrawing('5x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">5×3 m</button>
+    <button class="dtab" onclick="showDrawing('6x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">6×3 m</button>
   </div>
 
   <div style="display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;align-items:start" class="rv drawing-grid">
@@ -631,6 +633,25 @@
           <a href="#contatti" class="btn-primary" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">Preventivo</a>
         </div>
       </div>
+
+      <!-- 4x2 -->
+      <div class="dspec" id="spec-4x2" style="display:none">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
+          <div style="padding:1.2rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#16a34a;margin-bottom:.3rem">Modello</div><div style="font-size:1.3rem;font-weight:800;color:var(--black)">Everbox 4×2</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr">
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Lunghezza</div><div style="font-weight:700;color:var(--black)">400 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Larghezza</div><div style="font-weight:700;color:var(--black)">200 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Altezza colmo</div><div style="font-weight:700;color:var(--black)">233 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Superficie</div><div style="font-weight:700;color:var(--black)">8 m²</div></div>
+            <div style="padding:1rem 1.4rem;border-right:1px solid var(--border);border-bottom:none"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Isolamento</div><div style="font-weight:700;color:var(--black)">XPS 38mm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:none"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Pavimento</div><div style="font-weight:700;color:var(--black)">PP 35mm</div></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:.6rem">
+          <a href="https://wa.me/393286191755?text=Vorrei%20informazioni%20sull'Everbox%204x2" target="_blank" class="btn-wa" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">WhatsApp</a>
+          <a href="#contatti" class="btn-primary" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">Preventivo</a>
+        </div>
+      </div>
       <!-- 4x3 -->
       <div class="dspec" id="spec-4x3" style="display:none">
         <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
@@ -664,6 +685,25 @@
         </div>
         <div style="margin-top:1rem;display:flex;gap:.6rem">
           <a href="https://wa.me/393286191755?text=Vorrei%20informazioni%20sull'Everbox%205x3" target="_blank" class="btn-wa" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">WhatsApp</a>
+          <a href="#contatti" class="btn-primary" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">Preventivo</a>
+        </div>
+      </div>
+
+      <!-- 6x3 -->
+      <div class="dspec" id="spec-6x3" style="display:none">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
+          <div style="padding:1.2rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#16a34a;margin-bottom:.3rem">Modello</div><div style="font-size:1.3rem;font-weight:800;color:var(--black)">Everbox 6×3</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr">
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Lunghezza</div><div style="font-weight:700;color:var(--black)">600 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Larghezza</div><div style="font-weight:700;color:var(--black)">300 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Altezza colmo</div><div style="font-weight:700;color:var(--black)">233 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Superficie</div><div style="font-weight:700;color:var(--black)">18 m²</div></div>
+            <div style="padding:1rem 1.4rem;border-right:1px solid var(--border);border-bottom:none"><div style="font-size:.68rim;color:var(--muted);margin-bottom:.2rem">Isolamento</div><div style="font-weight:700;color:var(--black)">XPS 38mm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:none"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Pavimento</div><div style="font-weight:700;color:var(--black)">PP 35mm</div></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:.6rem">
+          <a href="https://wa.me/393286191755?text=Vorrei%20informazioni%20sull'Everbox%206x3" target="_blank" class="btn-wa" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">WhatsApp</a>
           <a href="#contatti" class="btn-primary" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">Preventivo</a>
         </div>
       </div>
@@ -707,12 +747,6 @@
         <label>Modello di interesse</label>
         <select name="modello" id="f-prod">
           <option value="">Seleziona…</option>
-          <option>Everbox 2×2 – Bianco (€2.269)</option>
-          <option>Everbox 3×2 – Bianco (€2.849)</option>
-          <option>Everbox 4×2 – Bianco (€3.399)</option>
-          <option>Everbox 3×3 – Bianco (€3.589)</option>
-          <option>Everbox 4×3 – Bianco (€4.249)</option>
-          <option>Everbox 5×3 – Bianco (€4.965)</option>
           <option>Everbox 2×2 – Antracite (€2.339)</option>
           <option>Everbox 3×2 – Antracite (€2.939)</option>
           <option>Everbox 4×2 – Antracite (€3.499)</option>
