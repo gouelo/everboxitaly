@@ -574,6 +574,7 @@
 
   <!-- Drawing selector tabs -->
   <div style="display:flex;gap:0;margin:2.5rem 0 2rem;border-bottom:1px solid var(--border)" class="rv">
+    <button class="dtab" onclick="showDrawing('2x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">2×2 m</button>
     <button class="dtab on" onclick="showDrawing('3x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid #16a34a;color:#0c0d0b;font-family:var(--font);font-size:.82rem;font-weight:600;cursor:pointer">3×2 m</button>
     <button class="dtab" onclick="showDrawing('3x3',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">3×3 m</button>
     <button class="dtab" onclick="showDrawing('4x2',this)" style="padding:.6rem 1.4rem;background:none;border:none;border-bottom:2px solid transparent;color:#6b7566;font-family:var(--font);font-size:.82rem;font-weight:400;cursor:pointer">4×2 m</button>
@@ -594,7 +595,25 @@
 
     <!-- Specs panel -->
     <div id="drawing-specs">
-      <!-- 3x2 -->
+      <!-- 2x2 -->
+      <div class="dspec" id="spec-2x2" style="display:none">
+        <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
+          <div style="padding:1.2rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#16a34a;margin-bottom:.3rem">Modello</div><div style="font-size:1.3rem;font-weight:800;color:var(--black)">Everbox 2×2</div></div>
+          <div style="display:grid;grid-template-columns:1fr 1fr">
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Lunghezza</div><div style="font-weight:700;color:var(--black)">210 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Larghezza</div><div style="font-weight:700;color:var(--black)">210 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border);border-right:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Altezza colmo</div><div style="font-weight:700;color:var(--black)">233 cm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:1px solid var(--border)"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Superficie</div><div style="font-weight:700;color:var(--black)">4 m²</div></div>
+            <div style="padding:1rem 1.4rem;border-right:1px solid var(--border);border-bottom:none"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Isolamento</div><div style="font-weight:700;color:var(--black)">XPS 38mm</div></div>
+            <div style="padding:1rem 1.4rem;border-bottom:none"><div style="font-size:.68rem;color:var(--muted);margin-bottom:.2rem">Pavimento</div><div style="font-weight:700;color:var(--black)">PP 35mm</div></div>
+          </div>
+        </div>
+        <div style="margin-top:1rem;display:flex;gap:.6rem">
+          <a href="https://wa.me/393286191755?text=Vorrei%20informazioni%20sull'Everbox%202x2" target="_blank" class="btn-wa" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">WhatsApp</a>
+          <a href="#contatti" class="btn-primary" style="font-size:.82rem;padding:.65rem 1.2rem;flex:1;justify-content:center">Preventivo</a>
+        </div>
+      </div>
+            <!-- 3x2 -->
       <div class="dspec on" id="spec-3x2">
         <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r);overflow:hidden">
           <div style="padding:1.2rem 1.4rem;border-bottom:1px solid var(--border)">
@@ -848,7 +867,8 @@
     const img = document.getElementById('drawing-img');
     img.style.opacity = '0';
     setTimeout(() => {
-      img.src = 'https://raw.githubusercontent.com/gouelo/everboxitaly/main/drawings/' + id + '.png';
+      const drawingMap = {'2x2':'2x2','3x2':'3x2','3x3':'3x3','4x2':'4x2','4x3':'4x3','5x3':'5x3','6x3':'6x3'};
+      img.src = 'https://raw.githubusercontent.com/gouelo/everboxitaly/main/drawings/' + (drawingMap[id]||'3x2') + '.png';
       img.alt = 'Disegno tecnico ' + id;
       img.style.opacity = '1';
     }, 200);
