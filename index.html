@@ -158,7 +158,7 @@
     }
     .hero-overlay{
       position:absolute;inset:0;z-index:1;
-      background:linear-gradient(to right, rgba(12,13,11,.58) 30%, rgba(12,13,11,.05) 100%);
+      background:linear-gradient(to right, rgba(12,13,11,.45) 30%, rgba(12,13,11,.0) 100%);
     }
     .hero-content{
       position:relative;z-index:2;
@@ -511,15 +511,14 @@
   <div class="rv">
     <p class="eyebrow">Catalogo</p>
     <h2 class="sh">Scegli il tuo modello</h2>
-    <p class="sub">6 dimensioni in bianco o grigio antracite. Pavimento e lucernario inclusi.</p>
+    <p class="sub">6 dimensioni in grigio antracite RAL7016, profilo nero. Porta con serratura, pavimento e vetri temperati inclusi.</p>
   </div>
   <div class="tab-row rv">
-    <button class="tab on" onclick="showTab('b',this)">⬜ Pannelli Bianchi</button>
-    <button class="tab" onclick="showTab('g',this)">◼ Grigio Antracite</button>
+    <button class="tab on" onclick="showTab('g',this)">◼ Grigio Antracite RAL7016</button>
     <button class="tab" onclick="showTab('a',this)">✦ Accessori</button>
   </div>
 
-  <div class="panel on" id="p-b">
+  <div class="panel" id="p-b" style="display:none">
     <div class="prod-grid">
       <div class="p-card rv"><img src="https://static.wixstatic.com/media/ee1d91_2da26a4ca0114e269f6de6bdab1d6cee~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_2da26a4ca0114e269f6de6bdab1d6cee~mv2.png" alt="2x2"/><div class="p-body"><div class="p-tag">Bianco · 2m×2m</div><div class="p-name">Everbox 2×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€2.269<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%202x2%20Bianco%20%E2%82%AC2.269." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
       <div class="p-card rv" style="transition-delay:.06s"><img src="https://static.wixstatic.com/media/ee1d91_f0bb6f4724eb40db9c9ddc5db48fcf66~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_f0bb6f4724eb40db9c9ddc5db48fcf66~mv2.png" alt="3x2"/><div class="p-body"><div class="p-tag">Bianco · 3m×2m</div><div class="p-name">Everbox 3×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€2.849<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x2%20Bianco%20%E2%82%AC2.849." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
@@ -530,23 +529,24 @@
     </div>
   </div>
 
-  <div class="panel" id="p-g">
+  <div class="panel on" id="p-g">
     <div class="prod-grid">
       <div class="p-card rv"><img src="https://static.wixstatic.com/media/ee1d91_4adb58789c35405a830d4aa10f604fbb~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_4adb58789c35405a830d4aa10f604fbb~mv2.png" alt="2x2 grigio"/><div class="p-body"><div class="p-tag">Antracite · 2m×2m</div><div class="p-name">Everbox 2×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€2.339<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%202x2%20Antracite%20%E2%82%AC2.339." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
-      <div class="p-card rv" style="transition-delay:.06s"><img src="https://static.wixstatic.com/media/ee1d91_7ac65945b7e0450b943431b6ffbf5fb4~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_7ac65945b7e0450b943431b6ffbf5fb4~mv2.png" alt="3x2 grigio"/><div class="p-body"><div class="p-tag">Antracite · 3m×2m</div><div class="p-name">Everbox 3×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€2.939<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x2%20Antracite%20%E2%82%AC2.939." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.06s"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/products/3x2.jpg" alt="3x2 grigio"/><div class="p-body"><div class="p-tag">Antracite · 3m×2m</div><div class="p-name">Everbox 3×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€2.939<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x2%20Antracite%20%E2%82%AC2.939." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
       <div class="p-card rv" style="transition-delay:.12s"><img src="https://static.wixstatic.com/media/ee1d91_28f9a179afcb445aa8bebece642f6682~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_28f9a179afcb445aa8bebece642f6682~mv2.png" alt="4x2 grigio"/><div class="p-body"><div class="p-tag">Antracite · 4m×2m</div><div class="p-name">Everbox 4×2</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€3.499<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%204x2%20Antracite%20%E2%82%AC3.499." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
-      <div class="p-card rv" style="transition-delay:.18s"><img src="https://static.wixstatic.com/media/ee1d91_89aaa1514ea349348165dc8de5324d1a~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_89aaa1514ea349348165dc8de5324d1a~mv2.png" alt="3x3 grigio"/><div class="p-body"><div class="p-tag">Antracite · 3m×3m</div><div class="p-name">Everbox 3×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€3.699<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x3%20Antracite%20%E2%82%AC3.699." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.18s"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/products/3x3.jpg" alt="3x3 grigio"/><div class="p-body"><div class="p-tag">Antracite · 3m×3m</div><div class="p-name">Everbox 3×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€3.699<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%203x3%20Antracite%20%E2%82%AC3.699." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
       <div class="p-card rv" style="transition-delay:.24s"><img src="https://static.wixstatic.com/media/ee1d91_d124088a4b974e098e878c26a33c45ec~mv2.png/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_d124088a4b974e098e878c26a33c45ec~mv2.png" alt="4x3 grigio"/><div class="p-body"><div class="p-tag">Antracite · 4m×3m</div><div class="p-name">Everbox 4×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€4.379<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%204x3%20Antracite%20%E2%82%AC4.379." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
-      <div class="p-card rv" style="transition-delay:.30s"><img src="https://static.wixstatic.com/media/ee1d91_4dc1d34158004c8a9f1e199615c2a757~mv2.png/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_4dc1d34158004c8a9f1e199615c2a757~mv2.png" alt="5x3 grigio"/><div class="p-body"><div class="p-tag">Antracite · 5m×3m</div><div class="p-name">Everbox 5×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€5.119<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%205x3%20Antracite%20%E2%82%AC5.119." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.30s"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/products/5x3.jpg" alt="5x3 grigio"/><div class="p-body"><div class="p-tag">Antracite · 5m×3m</div><div class="p-name">Everbox 5×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">€5.119<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%205x3%20Antracite%20%E2%82%AC5.119." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
+      <div class="p-card rv" style="transition-delay:.42s"><img src="https://raw.githubusercontent.com/gouelo/everboxitaly/main/products/6x3.jpg" alt="6x3 grigio"/><div class="p-body"><div class="p-tag">Antracite · 6m×3m</div><div class="p-name">Everbox 6×3</div><ul class="p-specs"><li>Telaio alluminio</li><li>Pannelli PVC+XPS 38mm</li><li>Pavimento 35mm · H 233cm</li></ul><div class="p-foot"><div class="p-price">Su richiesta<small> IVA escl.</small></div><a href="https://wa.me/393286191755?text=Ciao!%20Sono%20interessato%20all'Everbox%206x3%20Antracite." target="_blank" class="btn-buy">Acquista →</a></div></div></div>
     </div>
   </div>
 
   <div class="panel" id="p-a">
     <div class="acc-grid rv">
-      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_a71bc91509e1425a8eddcf412c7a1aff~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_a71bc91509e1425a8eddcf412c7a1aff~mv2.jpg" alt="Finestra"/><div class="acc-body"><div class="acc-name">Finestra Scorrevole</div><div class="acc-price">€319</div></div></div>
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/window_closed.jpg" alt="Finestra"/><div class="acc-body"><div class="acc-name">Finestra Scorrevole (2 ante) – Nera</div><div class="acc-price">€319</div></div></div>
       <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_2c9a0eba35d04a51adb357743b54b40c~mv2.jpg/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_2c9a0eba35d04a51adb357743b54b40c~mv2.jpg" alt="Elettrico"/><div class="acc-body"><div class="acc-name">Pannello Elettrico</div><div class="acc-price">€499</div></div></div>
-      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_8bef0cab157544b28f353353a6ea9a56~mv2.jpg/v1/fit/w_480,h_479,q_90,enc_avif,quality_auto/ee1d91_8bef0cab157544b28f353353a6ea9a56~mv2.jpg" alt="Vetro"/><div class="acc-body"><div class="acc-name">Parete in Vetro + tenda</div><div class="acc-price">€539</div></div></div>
-      <div class="acc-card"><img src="https://static.wixstatic.com/media/ee1d91_f94852a181a04702889d149b6f5b0295~mv2.webp/v1/fit/w_480,h_480,q_90,enc_avif,quality_auto/ee1d91_f94852a181a04702889d149b6f5b0295~mv2.webp" alt="Griglia"/><div class="acc-body"><div class="acc-name">Griglia di Ventilazione</div><div class="acc-price">€43,90</div></div></div>
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/window_open.jpg" alt="Vetro"/><div class="acc-body"><div class="acc-name">Parete Vetro con Tenda – Nera</div><div class="acc-price">€539</div></div></div>
+      <div class="acc-card"><img src="https://static.wixstatic.com/media/https://raw.githubusercontent.com/gouelo/everboxitaly/main/accessories/vent_black.jpg" alt="Griglia"/><div class="acc-body"><div class="acc-name">Griglia di Ventilazione – Nera</div><div class="acc-price">€43,90</div></div></div>
     </div>
   </div>
 </section>
@@ -719,6 +719,7 @@
           <option>Everbox 3×3 – Antracite (€3.699)</option>
           <option>Everbox 4×3 – Antracite (€4.379)</option>
           <option>Everbox 5×3 – Antracite (€5.119)</option>
+          <option>Everbox 6×3 – Antracite (su richiesta)</option>
           <option>Soluzione personalizzata</option>
         </select>
       </div>
