@@ -803,10 +803,8 @@
         <div class="wa-card-text"><strong>Scrivici su WhatsApp</strong><span>Risposta rapida · +39 328 619 1755</span></div>
       </a>
     </div>
-    <form class="cform rv" action="https://formspree.io/f/xredyvzj" method="POST">
-      <input type="hidden" name="_subject" value="🏠 Nuova richiesta Everbox Italia"/>
-      <input type="hidden" name="_cc" value="yoel@everbox.co.il"/>
-      <input type="hidden" name="_next" value="https://www.everboxitalia.com/?success=true#contatti"/>
+    <form class="cform rv" action="/api/contact" method="POST">
+      <input type="text" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;opacity:0;height:0;width:0"/>
       
       <div class="fr2">
         <div class="fg"><label>Nome *</label><input type="text" name="nome" placeholder="Mario" required/></div>
